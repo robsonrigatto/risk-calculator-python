@@ -1,3 +1,5 @@
 INELIGIBLE = "ineligible"
 MARRIED = "married"
-MORTGAGED = "mortgaged" 
+MORTGAGED = "mortgaged"
+OWNED = "owned"
+SINGLE = "single"
