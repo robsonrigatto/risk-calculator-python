@@ -11,7 +11,7 @@
 
 # How to test application
 
-- To test risk calculator, use a tools like Postman or use command below:
+- To test risk calculator, use a tool like Postman or use command below:
 
 ```json
 curl --location --request POST 'localhost:5000/risk/calculate' \
