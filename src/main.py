@@ -1,5 +1,5 @@
 from flask import Flask,request
-from services import risk_service
+from .services import risk_service
 import json
 
 app = Flask(__name__)

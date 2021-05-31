@@ -1,0 +1,8 @@
+AGE = "age"
+DEPENDENTS = "dependents"
+INCOME = "income"
+HOUSE = "house"
+MARITAL_STATUS = "marital_status"
+OWNERSHIP_STATUS = "ownership_status"
+VEHICLE = "vehicle"
+YEAR = "year"

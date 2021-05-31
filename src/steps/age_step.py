@@ -1,12 +1,14 @@
+from src.constants import fields, values
+
 def do_step(context):
     request = context.request
     response = context.response
 
-    age = request['age']
+    age = request[fields.AGE]
 
     if age > 60:
-        response.disability = "ineligible"
-        response.life = "ineligible"
+        response.disability = values.INELIGIBLE
+        response.life = values.INELIGIBLE
 
     if age < 30:
         context.auto.decrease(2)

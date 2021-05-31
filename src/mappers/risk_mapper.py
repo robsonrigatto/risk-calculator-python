@@ -1,4 +1,4 @@
-from dtos.score import Score
+from src.dtos.score import Score
 
 def to_score(context):
     score = context.response
