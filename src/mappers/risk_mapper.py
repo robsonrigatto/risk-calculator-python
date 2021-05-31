@@ -1,3 +1,4 @@
+from src.constants import values
 from src.dtos.score import Score
 
 def to_score(context):
@@ -11,13 +12,13 @@ def to_score(context):
     return score
 
 def calculate_plan(existing_plan, calculated_value):
-    if existing_plan == "ineligible":
+    if existing_plan == values.INELIGIBLE:
         return existing_plan
     
     if calculated_value <= 0:
-        return "economic"
+        return values.ECONOMIC
 
     if calculated_value >= 3:
-        return "responsible"
+        return values.RESPONSIBLE
 
-    return "regular"
+    return values.REGULAR

@@ -17,6 +17,7 @@ class TestRiskService(unittest.TestCase):
 
         self.assertEqual(score.life, values.REGULAR)
         self.assertEqual(score.auto, values.INELIGIBLE)
+        self.assertEqual(score.home, values.INELIGIBLE)
 
     def test_withHouseAndVehicle(self):
         request = { 
@@ -37,10 +38,10 @@ class TestRiskService(unittest.TestCase):
         self.assertEqual(score.life, values.REGULAR)
         self.assertEqual(score.auto, values.REGULAR)
 
-    def test_withIncome(self):
+    def test_withIncomeAndOldVehicle(self):
         request = { 
-            fields.RISK_QUESTIONS: [0,0,0], 
-            fields.AGE : 35,
+            fields.RISK_QUESTIONS: [0,1,0], 
+            fields.AGE : 20,
             fields.DEPENDENTS: 2,
             fields.INCOME: 200001,
             fields.MARITAL_STATUS: values.MARRIED,
@@ -48,9 +49,27 @@ class TestRiskService(unittest.TestCase):
                 fields.OWNERSHIP_STATUS: values.OWNED
             },
             fields.VEHICLE: {
-                fields.YEAR: 2020
+                fields.YEAR: 2010
             }
         }
         score = risk_service.calculate(request)
 
         self.assertEqual(score.life, values.ECONOMIC)
+
+    def test_withLowAgeAndMarried(self):
+        request = { 
+            fields.RISK_QUESTIONS: [1,1,1], 
+            fields.AGE : 20,
+            fields.DEPENDENTS: 2,
+            fields.INCOME: 1000,
+            fields.MARITAL_STATUS: values.MARRIED,
+            fields.HOUSE: {
+                fields.OWNERSHIP_STATUS: values.MORTGAGED
+            },
+            fields.VEHICLE: {
+                fields.YEAR: 2010
+            }
+        }
+        score = risk_service.calculate(request)
+
+        self.assertEqual(score.life, values.RESPONSIBLE)
