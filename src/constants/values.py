@@ -1,5 +1,7 @@
+ECONOMIC = "economic"
 INELIGIBLE = "ineligible"
 MARRIED = "married"
 MORTGAGED = "mortgaged"
 OWNED = "owned"
+REGULAR = "regular"
 SINGLE = "single"

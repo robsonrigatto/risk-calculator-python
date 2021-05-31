@@ -4,7 +4,7 @@ from src.constants import fields
 from src.dtos.context import Context
 from src.steps import income_step
 
-class TestSum(unittest.TestCase):
+class TestIncomeStep(unittest.TestCase):
     def test_noIncome(self):
         request = { fields.INCOME: 0 }
         context = Context(request, 0)

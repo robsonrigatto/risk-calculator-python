@@ -1,3 +1,4 @@
+from src.constants import fields
 from src.dtos.context import Context
 from src.steps import age_step, dependents_step, income_step, ineligible_step, married_step, mortgaged_step, vehicle_step
 from src.mappers import risk_mapper
@@ -5,7 +6,7 @@ from src.mappers import risk_mapper
 all_steps = [age_step, dependents_step, income_step, ineligible_step, married_step, mortgaged_step, vehicle_step]
 
 def calculate(request):
-    questions = request['risk_questions']
+    questions = request[fields.RISK_QUESTIONS]
     base_score = sum(questions)
 
     context = Context(request, base_score)

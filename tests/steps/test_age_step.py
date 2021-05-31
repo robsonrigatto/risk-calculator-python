@@ -4,7 +4,7 @@ from src.constants import fields, values
 from src.dtos.context import Context
 from src.steps import age_step
 
-class TestSum(unittest.TestCase):
+class TestAgeStep(unittest.TestCase):
     def test_above60years(self):
         request = { fields.AGE: 63 }
         context = Context(request, 0)

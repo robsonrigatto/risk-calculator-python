@@ -4,7 +4,7 @@ from src.constants import fields, values
 from src.dtos.context import Context
 from src.steps import ineligible_step
 
-class TestSum(unittest.TestCase):
+class TestIneligibleStep(unittest.TestCase):
     def test_allNullFields(self):
         request = { fields.INCOME: 0 }
         context = Context(request, 0)

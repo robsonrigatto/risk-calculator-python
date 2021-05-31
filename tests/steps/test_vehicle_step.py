@@ -4,7 +4,7 @@ from src.constants import fields, values
 from src.dtos.context import Context
 from src.steps import vehicle_step
 
-class TestSum(unittest.TestCase):
+class TestVehicleStep(unittest.TestCase):
     def test_withoutVehicle(self):
         request = { }
         context = Context(request, 0)

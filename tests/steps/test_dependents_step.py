@@ -4,7 +4,7 @@ from src.constants import fields
 from src.dtos.context import Context
 from src.steps import dependents_step
 
-class TestSum(unittest.TestCase):
+class TestDependentsStep(unittest.TestCase):
     def test_noDependents(self):
         request = { fields.DEPENDENTS: 0 }
         context = Context(request, 0)

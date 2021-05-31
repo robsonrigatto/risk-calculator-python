@@ -4,7 +4,7 @@ from src.constants import fields, values
 from src.dtos.context import Context
 from src.steps import married_step
 
-class TestSum(unittest.TestCase):
+class TestMarriedStep(unittest.TestCase):
     def test_married(self):
         request = { fields.MARITAL_STATUS: values.MARRIED }
         context = Context(request, 0)
